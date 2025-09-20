@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="section">
+  <h2>Messages Dashboard</h2>
+  <table>
+    <tr><th>ID</th><th>Name</th><th>Phone</th><th>Message</th><th>Date</th></tr>
+    {% for m in messages %}
+      <tr>
+        <td>{{ m['id'] }}</td>
+        <td>{{ m['name'] }}</td>
+        <td>{{ m['phone'] }}</td>
+        <td>{{ m['message'] }}</td>
+        <td>{{ m['created_at'] }}</td>
+      </tr>
+    {% else %}
+      <tr><td colspan="5">No messages yet.</td></tr>
+    {% endfor %}
+  </table>
+  <form method="post" action="{{ url_for('admin_logout') }}"><button type="submit">Logout</button></form>
+</div>
+{% endblock %}

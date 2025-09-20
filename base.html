@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title or 'MJM Rental Flights' }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+<header>
+  <h2>MJM Rental Flights</h2>
+  <nav>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('fleet') }}">Fleet</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+    <a href="{{ url_for('admin_login') }}">Dashboard</a>
+  </nav>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer>
+  <p>© {{ year }} MJM Rental Flights - Midwest National Air Center (KGPH)</p>
+</footer>
+</body>
+</html>
