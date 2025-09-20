@@ -1,0 +1,3 @@
+@app.route("/", methods=["HEAD"])
+def healthcheck():
+    return "", 200
